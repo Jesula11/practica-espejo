@@ -39,14 +39,31 @@ function pintarTareas() {
   });
   tareasFiltradas.forEach(tarea => {
     const li = document.createElement('li');
-    });
     li.classList.add('item-tarea', tarea.prioridad);
 
     if (tarea.completada) {
       li.classList.add('completada');
-}
-  // TODO: Añadir un botón dentro de cada <li> para poder alternar el estado (Completada/Pendiente)
+    }
+    const botonEstado = document.createElement('button');
+
+    botonEstado.textContent = tarea.completada
+    ? 'Marcar pendiente'
+    : 'Completar';
+
+    botonEstado.addEventListener('click', () => {
+      tareas = tareas.map(t => {
+        if (t.id === tarea.id) {
+          return { ...t, completada: !t.completada };
+        }
+
+        return t;
+    });
+
+    pintarTareas();
+    }); 
   // TODO: Inyectar el <li> resultante en listaContenedor usando .appendChild()
+
+  });
 }
 
 // 5. MANEJO DE EVENTOS: Captura de formulario
