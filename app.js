@@ -103,7 +103,7 @@ botonesFiltro.forEach(boton => {
     event.target.classList.add('active');
 
     filtroActual = boton.dataset.filtro;
-    // TODO: Invocar pintarTareas() para refrescar la pantalla
+    pintarTareas();
   });
 });
 
