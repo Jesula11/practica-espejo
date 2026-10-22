@@ -81,13 +81,15 @@ formulario.addEventListener('submit', (event) => {
   
   const titulo = inputTitulo.value.trim();
   const prioridad = selectPrioridad.value;
+  
   const nuevaTarea = {
     id: Date.now(),
     titulo: titulo,
     prioridad: prioridad,
     completada: false
   };
-  // TODO: Añadir el objeto al array global de tareas de forma inmutable (operador spread)
+
+  tareas = [...tareas, nuevaTarea];
   // TODO: Volver a invocar pintarTareas() y resetear el formulario
 });
 
