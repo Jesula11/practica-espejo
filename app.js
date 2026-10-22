@@ -81,7 +81,7 @@ formulario.addEventListener('submit', (event) => {
   
   const titulo = inputTitulo.value.trim();
   const prioridad = selectPrioridad.value;
-  
+
   const nuevaTarea = {
     id: Date.now(),
     titulo: titulo,
@@ -90,7 +90,9 @@ formulario.addEventListener('submit', (event) => {
   };
 
   tareas = [...tareas, nuevaTarea];
-  // TODO: Volver a invocar pintarTareas() y resetear el formulario
+  
+  pintarTareas();
+  formulario.reset();
 });
 
 // 6. MANEJO DE EVENTOS: Captura de botones de filtrado
