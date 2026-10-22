@@ -37,7 +37,9 @@ function pintarTareas() {
 
     return true;
   });
-  // TODO: Recorrer el array filtrado y crear dinámicamente un elemento <li> por cada tarea
+  tareasFiltradas.forEach(tarea => {
+    const li = document.createElement('li');
+    });
   // TODO: Configurar las clases CSS según la prioridad y el estado (completada)
   // TODO: Añadir un botón dentro de cada <li> para poder alternar el estado (Completada/Pendiente)
   // TODO: Inyectar el <li> resultante en listaContenedor usando .appendChild()
