@@ -61,8 +61,17 @@ function pintarTareas() {
 
     pintarTareas();
     }); 
-  // TODO: Inyectar el <li> resultante en listaContenedor usando .appendChild()
+     const titulo = document.createElement('span');
+    titulo.textContent = tarea.titulo;
 
+    if (tarea.completada) {
+      titulo.classList.add('completada');
+    }
+
+    li.appendChild(titulo);
+    li.appendChild(botonEstado);
+
+    listaContenedor.appendChild(li);
   });
 }
 
